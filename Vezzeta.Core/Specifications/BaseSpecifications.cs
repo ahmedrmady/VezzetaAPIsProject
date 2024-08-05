@@ -4,7 +4,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
-using Vezzeta.Core.Data.Entities;
+using Vezzeta.Core.Entities;
 
 namespace Vezzeta.Core.Specifications
 {

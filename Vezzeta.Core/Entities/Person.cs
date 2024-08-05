@@ -6,9 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Vezzeta.Core.Enums;
 
-namespace Vezzeta.Core.Data.Entities
+namespace Vezzeta.Core.Entities
 {
-    public class Person:BaseEntity
+    public class Person : BaseEntity
     {
         public IFormFile Image { get; set; }
         public string FullName { get; set; }

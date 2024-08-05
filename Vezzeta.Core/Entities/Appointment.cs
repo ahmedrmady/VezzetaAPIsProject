@@ -5,11 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Vezzeta.Core.Data.Entities
+namespace Vezzeta.Core.Entities
 {
-    public class Appointment:BaseEntity
+    public class Appointment : BaseEntity
     {
-       
+
         public string ImageUrl { get; set; }
 
         public DateTime Date { get; set; }
@@ -24,11 +24,11 @@ namespace Vezzeta.Core.Data.Entities
 
         public double FinalPrice { get; set; }
 
-      //  public Status Status { get; set; }
+        //  public Status Status { get; set; }
 
         public int SpecializeId { get; set; }
         public Specialize Specialize { get; set; }
-       
+
         public int DoctorId { get; set; }
         public Doctor Doctor { get; set; }
 
