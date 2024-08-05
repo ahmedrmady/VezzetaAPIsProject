@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Vezzeta.Core\Vezzeta.Core.csproj" />
+  </ItemGroup>
+
 </Project>
