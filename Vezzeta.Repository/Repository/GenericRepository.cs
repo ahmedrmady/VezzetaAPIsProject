@@ -1,68 +1,49 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Vezzeta.Core.Contracts.Repository.Contracts;
+using Vezzeta.Repository.SpecificationsEvaluator;
+
 using Vezzeta.Core.Entities;
+using Vezzeta.Core.Specifications;
+using Vezzeta.Repository.Data;
+
 
 namespace Vezzeta.Repository.Repository
 {
     public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
     {
-        public GenericRepository()
+        private readonly AppDbContext _context;
+
+        public GenericRepository(AppDbContext context)
         {
-            
-        }
-        public void Add(T entity)
-        {
+            this._context = context;
 
         }
+
+        public void Add(T entity)
+        => _context.Set<T>().Add(entity);
+
 
         public void Delete(T entity)
-        {
-            throw new NotImplementedException();
-        }
+        => _context.Set<T>().Add(entity);
 
-        public IReadOnlyList<T> GetAll()
-        {
-            throw new NotImplementedException();
-        }
+        public async Task<IReadOnlyList<T>> GetAll()
+       => await _context.Set<T>().AsNoTracking().ToListAsync();
 
-        public T GetById(int id)
-        {
-            throw new NotImplementedException();
-        }
+        public async Task<IReadOnlyList<T>> GetAllWithSpecs(ISpecifications<T> specifications)
+       => await _context.Set<T>().GetQuery(specifications).AsNoTracking().ToListAsync();
 
-        public void Update(T entity)
-        {
-            throw new NotImplementedException();
-        }
-    public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
-    {
-        public void Add(T entity)
-        {
-            throw new NotImplementedException();
-        }
+        public async Task<T> GetById(int id)
+        => await _context.Set<T>().FindAsync(id);
 
-        public void Delete(T entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IReadOnlyList<T> GetAll()
-        {
-            throw new NotImplementedException();
-        }
-
-        public T GetById(int id)
-        {
-            throw new NotImplementedException();
-        }
+        public async Task<T> GetWithSpecs(ISpecifications<T> specifications)
+        => await _context.Set<T>().GetQuery<T>(specifications).FirstOrDefaultAsync();
 
         public void Update(T entity)
-        {
-            throw new NotImplementedException();
-        }
+       => _context.Set<T>().Update(entity);
     }
 }

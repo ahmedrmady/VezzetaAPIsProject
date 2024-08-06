@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Vezzeta.Core.Entities;
+using Vezzeta.Core.Specifications;
 
 namespace Vezzeta.Core.Contracts.Repository.Contracts
 {
-    public interface IGenericRepository<TEntity> where TEntity : class
+    public interface IGenericRepository<TEntity> where TEntity : BaseEntity
     {
         void Add(TEntity entity);
 
@@ -14,9 +16,12 @@ namespace Vezzeta.Core.Contracts.Repository.Contracts
 
         void Delete(TEntity entity);
 
-        TEntity GetById(int id);
+        Task<TEntity> GetById(int id);
+        Task<TEntity> GetWithSpecs(ISpecifications<TEntity> specifications);
 
-        IReadOnlyList<TEntity> GetAll();
+        Task<IReadOnlyList<TEntity>> GetAll();
+
+        Task<IReadOnlyList<TEntity>> GetAllWithSpecs(ISpecifications<TEntity> specifications);
 
     }
 }
