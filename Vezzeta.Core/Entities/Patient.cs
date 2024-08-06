@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Vezzeta.Core.Data.Entities
+namespace Vezzeta.Core.Entities
 {
-    public class Patient:Person
+    public class Patient : Person
     {
         public ICollection<Appointment> Appointments { get; set; }
     }
