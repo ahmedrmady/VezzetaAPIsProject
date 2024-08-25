@@ -5,7 +5,9 @@ VisualStudioVersion = 17.5.33627.172
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vezzeta.Core", "Vezzeta.Core\Vezzeta.Core.csproj", "{BBCB833C-B0E3-41A2-832E-45227D8954F4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vezzeta.Repository", "Vezzeta.Repository\Vezzeta.Repository.csproj", "{DE3F36AE-CCD9-4D63-950A-1091087BF039}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vezzeta.Repository", "Vezzeta.Repository\Vezzeta.Repository.csproj", "{DE3F36AE-CCD9-4D63-950A-1091087BF039}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vezzeta.APIs", "Vezzeta.APIs\Vezzeta.APIs.csproj", "{6139ACBD-DA0E-4E5A-B514-474397030B42}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{DE3F36AE-CCD9-4D63-950A-1091087BF039}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE3F36AE-CCD9-4D63-950A-1091087BF039}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE3F36AE-CCD9-4D63-950A-1091087BF039}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6139ACBD-DA0E-4E5A-B514-474397030B42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6139ACBD-DA0E-4E5A-B514-474397030B42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6139ACBD-DA0E-4E5A-B514-474397030B42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6139ACBD-DA0E-4E5A-B514-474397030B42}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
