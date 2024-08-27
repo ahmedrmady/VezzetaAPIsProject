@@ -1,6 +1,7 @@
 
 using Microsoft.AspNetCore.Mvc;
 using Vezzeta.APIs.Error;
+using Vezzeta.APIs.Middlewares;
 
 namespace Vezzeta.APIs
 {
@@ -39,9 +40,11 @@ namespace Vezzeta.APIs
 
             var app = builder.Build();
 
+            app.UseMiddleware<ExceptionMiddleware>();
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
+
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }

@@ -25,7 +25,7 @@ namespace Vezzeta.APIs.Controllers
         [HttpGet("ServerError")]
         public ActionResult ServerError()
         {
-            List<int> nums;
+            List<int> nums= null;
             
             return Ok(nums.FirstOrDefault(n=>n/2==1));
         }
